@@ -616,7 +616,7 @@ function render() {
   document.getElementById("ordinalPointsDisplay").innerHTML = "You have " + beautify(game.OP) + " Ordinal Points"
   document.getElementById("omegaFactorOPDisp").innerHTML = "You have " + beautify(game.OP) + " Ordinal Points"
   document.getElementById("succAutoAmount").innerHTML = "You have " + beautify(game.succAuto.add(extraAuto)) + " successor autobuyer, clicking the successor button " + beautify(game.succAuto.add(extraAuto).mul(totalMult).mul(succAutoMult)) + " times per second" 
-  document.getElementById("limAutoAmount").innerHTML = "You have " + beautify(game.limAuto.add(extraAuto)) + "  maximize autobuyer, clicking the maximize button " + beautify(game.succAuto.add(extraAuto).mul(totalMult).mul(limAutoMult)) + " times per second"
+  document.getElementById("limAutoAmount").innerHTML = "You have " + beautify(game.limAuto.add(extraAuto)) + "  maximize autobuyer, clicking the maximize button " + beautify(game.limAuto.add(extraAuto).mul(totalMult).mul(limAutoMult)) + " times per second"
   document.getElementById("buysucc").innerHTML = "Buy Successor Autobuyer for " + (game.challenge==1||game.challenge==7?(game.succAuto.eq(1)?"Infinity":"1.000e6"):beautify(EN.mul(100,EN.pow(2,game.succAuto)))) + " OP"
   document.getElementById("buylim").innerHTML = "Buy Maximize Autobuyer for " + (game.challenge==1||game.challenge==7?(game.limAuto.eq(1)?"Infinity":"1.000e6"):beautify(EN.mul(100,EN.pow(2,game.limAuto)))) + "  OP"
   document.getElementById("factorShift").innerHTML = "Factor Shift (" + game.factorShifts + "): Requires " + ((game.challenge==5||game.challenge==7) && game.factorShifts >= 2 ? "Infinity" : beautify(getShiftCost(game.factorShifts))) +" OP"
