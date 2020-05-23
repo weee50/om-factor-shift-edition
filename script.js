@@ -829,7 +829,8 @@ function factorCollapse()
 {
   if (game.factorShifts >= 50) // actually do the collapse
   {
-    game.products += Math.max(game.OP.log10().div(250).logBase(1.025).add(2).floor().toNumber(), 1)
+    productsEarned = Math.max(game.OP.log10().div(250).logBase(1.025).add(2).floor().toNumber(), 1)
+    game.products += isNaN(productsEarned) ? 1 : productsEarned;
     resetEverythingCollapseDoes();
 
     if (game.pupgrades.includes(1))
@@ -1245,10 +1246,14 @@ function updateOmegaFactors() {
     game.omegaFactorCount = 0;
   }
 
+  while (game.omegaFactors.length < game.omegaFactorCount)
+  {
+    game.omegaFactors.push(0);
+  }
+
   if (game.omegaFactorCount > 0) {
     let factorListHTML=""
     for(let factorListCounter=0;factorListCounter<game.omegaFactorCount;factorListCounter++){
-      if (typeof game.omegaFactors[factorListCounter] == undefined) {game.omegaFactors[factorListCounter] = 0}
       factorListHTML += "<li>Omega Factor " + (factorListCounter+1) + " x" + beautifyEN(1 + 0.03 * game.omegaFactors[factorListCounter], 2) + " <button onclick=\"buyOmegaFactor(" + factorListCounter + ")\" class=\"productButton\">Increase Omega Factor " + (factorListCounter+1) + " for " + beautifyEN(EN.fromHyperE("E" + (factorListCounter + 1) + "#" + (game.omegaFactors[factorListCounter] + 1))) + " OP</button></li>"
     }
     document.getElementById("omegaFactorListMain").style.display = "block"
