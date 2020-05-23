@@ -383,8 +383,9 @@ function loop(ms) {
   }
 
   let extraAuto = 0;
-  if (game.upgrades.includes(6)) { extraAuto++; }
+  if (game.upgrades.includes(7)) { extraAuto++; }
   if (game.pupgrades.includes(17)) { extraAuto++; }
+  console.log(extraAuto);
 
   game.lastTick=Date.now()
   if (game.chal8==1 && calcRefund()>0) confirm("You failed Challenge 8 because you had booster upgrades on you!")
