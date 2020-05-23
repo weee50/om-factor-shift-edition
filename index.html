@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ordinal Markup</title>
+    <title>OM: Factor Shift Edition</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,9 +19,10 @@
     <h1 id="hardy" style="font-size: 30pt;font-weight: bold">H<sub>0</sub> (10)=10</h1>
     <button onclick="Tab(1)" class="tabButton">Ordinals</button><text class="invisible">0</text>
     <button onclick="Tab(2)" class="tabButton">Options</button><text class="invisible">0</text>
-    <button onclick="Tab(4)" class="tabButton">Milestones</button><text class="invisible">0</text>
+    <button onclick="Tab(4)" class="tabButton">Objectives</button><text class="invisible">0</text>
     <button onclick="Tab(5)" id="infinityTabButton" class="infinityTabButton">Infinity</button><text class="invisible">0</text>
     <button onclick="Tab(6)" id="boosterTabButton" class="boosterTabButton">Boosters</button><text class="invisible">0</text>
+    <button onclick="Tab(7)" id="productTabButton" class="productTabButton">Products</button><text class="invisible">0</text>
     <p></p>
     <div id="Tab1">
       <button onclick="increment(1)" class="normalButton">Increase Ordinal by 1</button>
@@ -37,7 +38,7 @@
       <p><a href="information.html">Information</a> | <a href="https://discordapp.com/invite/RerPeNA">Discord</a></p>
       <button onclick="changeInt()" class="normalButton" id="changeInt">Millisecond Interval: 50ms</button>
       <button onclick="changeOrdLengthLess()" class="normalButton" id="changeOrdLengthLess">Maximum Ordinal Length below e0: 50ms</button>
-      <button onclick="changeOrdLengthMore()" class="normalButton" id="changeOrdLengthMore">Maximum Ordinal Length above e0: 50ms</button>
+      <button onclick="changeOrdLengthMore()" class="normalButton" id="changeOrdLengthMore" style="display: none">Maximum Ordinal Length above e0: 50ms</button>
       <p></p>
       <button onclick="changeOrdNotation()" class="normalButton" id="changeOrdNotation">Current Ordinal Notation: Madore's</button>
       <button onclick="changeTheme()" class="normalButton" id="changeTheme">Current Theme: Dark</button>
@@ -65,6 +66,8 @@
         <li>Reach Base 6</li>
         <li>Get every booster upgrade</li>
         <li>Unlock the next layer</li>
+        <li>Unlock the second Omega Factor</li>
+        <li>Get your Ordinal Points above 1.8e308</li>
       </ol>
     </div>
     <div id="Tab5">
@@ -125,7 +128,7 @@
       <button onclick="bsubTab(3)" class="boosterButton" id="challengeSubTab">Challenges</button>
       <button onclick="bsubTab(4)" class="boosterButton" id="incrementySubTab">Incrementy</button>
       <p></p>
-      <div id="bsubTab1"><div id="bsubTab1sub"><text id="boostersText">You have 1 Boosters</text>
+      <div id="bsubTab1"><div id="bsubTab1sub"><text id="boostersText" class="bigText">You have 1 Boosters</text>
       <button id="refundBoosters" onclick="refund()">Refund back 0 boosters, but reset this factor shift</button>
       <div>
         <br>
@@ -217,6 +220,77 @@
           <br>
           <center><button class="treeButton boosterButton" id="getManifolds" onclick="getManifolds()">Reset incrementy for a manifold.<br><br>Need: x10 mult</button></center>
         </div>
+      </div>
+    </div>
+    <div id="Tab7" style="width: 100%">
+      <button onclick="psubTab(1)" class="productButton">Information</button>
+      <button onclick="psubTab(2)" class="productButton">Upgrades</button>
+      <button onclick="psubTab(3)" class="productButton">Omega Factors</button>
+      <button onclick="psubTab(4)" class="productButton">Autoprestigers</button>
+      <div id="psubTab1">
+        <br>
+        Welcome to this part of the game!<br>
+        <br>
+        You have amassed so many Factors and Ordinal Points that they have all collapsed into a single Product.<br>
+        You can spend these on upgrades, and you will gain more Products the more Ordinal Points you had when you Factor Collapsed.<br>
+        However, you cannot spend these products willy-nilly. The upgrades are arranged in horizontal paths, and each upgrade path has 5 tiers.<br>
+        <br>
+        You can only buy two out of three Tier 1 and Tier 2 upgrades from the first three paths, and only one Tier 3-5 upgrade.<br>
+        The Meta Upgrades path does not count a path (i.e. you can get them independently of the path restrictions), and also do not consume products.<br>
+      </div>
+      <div id="psubTab2">
+        <text id="productsText" class="bigText">You have x Products</text>
+        <button id="factorCollapse" onclick="factorCollapse()">Reach 50 Factor Shifts to collapse! (Or restart current collapse, respecs upgrades if unable to collapse)</button><br><br><br><br><br>
+        <table class="trueCenter long" style="width: 1100px"><tbody class="trueCenter long">
+          <tr>
+            <td>Factor Path</td>
+            <td><button class="treeButton plocked" id="pup1" onclick="pup(1)">You start at Factor Shift 15<br><br>1 Product</button></td>
+            <td><button class="treeButton plocked" id="pup2" onclick="pup(2)">You can Factor Shift beyond 50<br><br>12 Products</button></td>
+            <td><button class="treeButton plocked" id="pup3" onclick="pup(3)">???<br><br>???</button></td>
+            <td><button class="treeButton plocked" id="pup4" onclick="pup(4)">???<br><br>???</button></td>
+            <td><button class="treeButton plocked" id="pup5" onclick="pup(5)">???<br><br>???</button></td>
+          </tr>
+          <tr>
+            <td>Omega Factor Path</td>
+            <td><button class="treeButton plocked" id="pup6" onclick="pup(6)">Unlock the first Omega Factor<br><br>1 Product</button></td>
+            <td><button class="treeButton plocked" id="pup7" onclick="pup(7)">Unlock the second Omega Factor<br><br>2 Products</button></td>
+            <td><button class="treeButton plocked" id="pup8" onclick="pup(8)">???<br><br>???</button></td>
+            <td><button class="treeButton plocked" id="pup9" onclick="pup(9)">???<br><br>???</button></td>
+            <td><button class="treeButton plocked" id="pup10" onclick="pup(10)">???<br><br>???</button></td>
+          </tr>
+          <tr>
+            <td>Base Path</td>
+            <td><button class="treeButton plocked" id="pup11" onclick="pup(11)">The base is always at most 8<br><br>1 Product</button></td>
+            <td><button class="treeButton plocked" id="pup12" onclick="pup(12)">OP gain base is now 11<br><br>2 Products</button></td>
+            <td><button class="treeButton plocked" id="pup13" onclick="pup(13)">???<br><br>???</button></td>
+            <td><button class="treeButton plocked" id="pup14" onclick="pup(14)">???<br><br>???</button></td>
+            <td><button class="treeButton plocked" id="pup15" onclick="pup(15)">???<br><br>???</button></td>
+          </tr>
+          <tr>
+            <td>Meta Upgrades</td>
+            <td><button class="treeButton plocked" id="pup16" onclick="pup(16)"><font size="2pt">Gain 1% of OP gained on Infinity per second if pending OP is less than current OP</font><br>Need 1 Product</button></td>
+            <td><button class="treeButton plocked" id="pup17" onclick="pup(17)">Gain 1 additional free autoclicker each<br><br>Need 3 Products</button></td>
+            <td><button class="treeButton plocked" id="pup18" onclick="pup(18)">Unlock Factor Shift Autobuyer<br><br>Need 9 Products</button></td>
+            <td><button class="treeButton plocked" id="pup19" onclick="pup(19)">Unlock Product Challenges<br><br>Need 70 Products</button></td>
+            <td><button class="treeButton plocked" id="pup20" onclick="pup(20)">???<br><br>???</button></td>
+          </tr>
+          </tbody></table>
+          <p style="text-align: center"><i>You may have to rotate your phone on mobile to see all of the upgrades. The bottom row of upgrades doesn't consume your products.</i></p>
+      </div>
+      <div id="psubTab3"><br>
+        <p id="omegaFactorOPDisp">You have 0 Ordinal Points</p>
+        <p id="noOmegaFactors">You have no Omega Factors. Purchase the relevant Product Upgrade to get one!</p>
+        <ul id="omegaFactorListMain">
+          Omega Factor 1 x1.05
+        </ul>
+        <br>
+        <p id="omegaFactorMult">Your Omega Factors are multiplying all regular factors by 1</p>
+        <p>Omega Factors do not reset on Factor Shift</p>
+      </div>
+      <div id="psubTab4"><br>
+        <p id="factorShiftAuto">Your Factor Shift Autobuyer is automatically Factor Shifting 1 times per second</p>
+        <br>
+        <button onclick="toggleAutoShift()" id="autoShiftButton" class="productButton">Factor Shift Autobuyer: ON</button>
       </div>
     </div>
     <div id="collapseScreen" style="display: none">

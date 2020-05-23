@@ -115,7 +115,7 @@
   transform: translate(-50%);
 }
 
-#boostersText {
+.bigText {
   margin: 0;
   position: absolute;
   text-align: center;
@@ -144,11 +144,32 @@
   font-size: 14pt
 }
 
+#factorCollapse {
+  font-family: sans-serif;
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 2px;
+  border-color: #000000;
+  border-width:1.5px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%,42px);
+  transform: translate(-50%,42px);
+  font-size: 13pt
+}
+
 #refundBoosters:hover {
   background: #EFEFEF
 }
 
-.locked {
+#refundProducts:hover {
+  background: #EFEFEF
+}
+
+.locked .plocked {
   color: #000000;
   background: #FFFFFF;
   border-radius: 2px;
@@ -163,12 +184,32 @@
   transition-duration: 0.1s;
 }
 
+.pcanbuy {
+  color: #FF00FF;
+  background: #000000;
+  border-radius: 2px;
+  border-color: #FF00FF;
+  transition-duration: 0.1s;
+}
+
 .canbuy:hover {
   background: #008000;
   color: #0000C0;
 }
 
+.pcanbuy:hover {
+  background: #500050;
+  color: #C000C0;
+}
+
 .bought {
+  color: #000000;
+  background: #00FF00;
+  border-radius: 2px;
+  border-color: #000000;
+}
+
+.pbought {
   color: #000000;
   background: #00FF00;
   border-radius: 2px;
@@ -232,7 +273,7 @@ invisible {
   opacity: 0;
 }
 
-.hyperBoostTabButton {
+.productTabButton {
   font-family: sans-serif;
   color: magenta;
   background: #000000;
@@ -245,6 +286,10 @@ invisible {
   font-size: 15pt;
   font-weight: bold;
   border: solid darkmagenta;
+}
+
+.productTabButton:hover {
+  color: white;
 }
 
 
